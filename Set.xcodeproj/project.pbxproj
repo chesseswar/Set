@@ -14,6 +14,10 @@
 		AFC93A84216267230085FB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC93A82216267230085FB40 /* LaunchScreen.storyboard */; };
 		AFC93A8F216267230085FB40 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC93A8E216267230085FB40 /* SetTests.swift */; };
 		AFC93A9A216267230085FB40 /* SetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC93A99216267230085FB40 /* SetUITests.swift */; };
+		F974C13C21650FA800C216E4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C13B21650FA800C216E4 /* Card.swift */; };
+		F974C1402165103900C216E4 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C13F2165103900C216E4 /* Shape.swift */; };
+		F974C142216510D000C216E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C141216510D000C216E4 /* Color.swift */; };
+		F974C144216510E200C216E4 /* Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C143216510E200C216E4 /* Fill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		AFC93A95216267230085FB40 /* SetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC93A99216267230085FB40 /* SetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUITests.swift; sourceTree = "<group>"; };
 		AFC93A9B216267230085FB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F974C13B21650FA800C216E4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F974C13F2165103900C216E4 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		F974C141216510D000C216E4 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F974C143216510E200C216E4 /* Fill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 		AFC93A78216267230085FB40 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				F974C13E2165102000C216E4 /* Card */,
 				AFC93A79216267230085FB40 /* AppDelegate.swift */,
 				AFC93A7B216267230085FB40 /* ViewController.swift */,
 				AFC93A7D216267230085FB40 /* Main.storyboard */,
@@ -123,6 +132,25 @@
 				AFC93A9B216267230085FB40 /* Info.plist */,
 			);
 			path = SetUITests;
+			sourceTree = "<group>";
+		};
+		F974C13D21650FFA00C216E4 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				F974C13F2165103900C216E4 /* Shape.swift */,
+				F974C141216510D000C216E4 /* Color.swift */,
+				F974C143216510E200C216E4 /* Fill.swift */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
+		F974C13E2165102000C216E4 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				F974C13B21650FA800C216E4 /* Card.swift */,
+				F974C13D21650FFA00C216E4 /* Attributes */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +217,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Siddiqui, Arham J";
+				ORGANIZATIONNAME = "Siddiqui, Arham J; Eswaran, Pranav V";
 				TargetAttributes = {
 					AFC93A75216267230085FB40 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -260,6 +288,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC93A7C216267230085FB40 /* ViewController.swift in Sources */,
+				F974C1402165103900C216E4 /* Shape.swift in Sources */,
+				F974C13C21650FA800C216E4 /* Card.swift in Sources */,
+				F974C142216510D000C216E4 /* Color.swift in Sources */,
+				F974C144216510E200C216E4 /* Fill.swift in Sources */,
 				AFC93A7A216267230085FB40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +539,7 @@
 				AFC93AA0216267230085FB40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFC93AA1216267230085FB40 /* Build configuration list for PBXNativeTarget "SetTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +548,7 @@
 				AFC93AA3216267230085FB40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFC93AA4216267230085FB40 /* Build configuration list for PBXNativeTarget "SetUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +557,7 @@
 				AFC93AA6216267230085FB40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

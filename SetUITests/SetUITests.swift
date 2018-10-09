@@ -3,7 +3,7 @@
 //  SetUITests
 //
 //  Created by Siddiqui, Arham J on 10/1/18.
-//  Copyright © 2018 Siddiqui, Arham J. All rights reserved.
+//  Copyright © 2018 Siddiqui, Arham J and Eswaran, Pranav V. All rights reserved.
 //
 
 import XCTest
