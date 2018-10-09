@@ -3,11 +3,12 @@
 //  SetTests
 //
 //  Created by Siddiqui, Arham J on 10/1/18.
-//  Copyright © 2018 Siddiqui, Arham J. All rights reserved.
+//  Copyright © 2018 Siddiqui, Arham J. and Eswaran, Pranav V. All rights reserved.
 //
 
 import XCTest
 @testable import Set
+
 
 class SetTests: XCTestCase {
     
@@ -21,9 +22,9 @@ class SetTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAttributesOfCard() {
+        let card = Card(num: 3, shape: Shape.oval, color: Color.blue, fill: Fill.open)
+        XCTAssertEqual(card.num, 3)
     }
     
     func testPerformanceExample() {
