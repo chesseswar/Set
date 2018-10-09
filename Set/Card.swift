@@ -13,6 +13,5 @@ struct Card {
     let shape: Shape
     let color: Color
     let fill: Fill
-    
 }
 

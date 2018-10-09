@@ -27,6 +27,16 @@ class SetTests: XCTestCase {
         XCTAssertEqual(card.num, 3)
     }
     
+    func testExampleGame() {
+        let game = Game()
+        game.setUp()
+        game.board.select(Row.top, Column.col_1)
+            .select(Row.middle, Column.col_4)
+            .select(Row.bottom, Column.col_3)
+            // if one selects more than 3 cards, throw exception
+        game.validateSet()
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
