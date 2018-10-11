@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Row {
+enum Row: UInt32 {
     case top
     case middle
     case bottom

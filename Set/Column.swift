@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Column {
+enum Column: UInt32 {
     case col_1
     case col_2
     case col_3
