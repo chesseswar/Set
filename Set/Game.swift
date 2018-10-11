@@ -9,15 +9,10 @@
 import Foundation
 
 struct Game {
-    var deck: [Card]
     var board: Board
     
     init() {
-        deck = []
         board = Board()
-    }
-    
-    func setUp() {
         
     }
     

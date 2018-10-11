@@ -8,8 +8,12 @@
 
 import Foundation
 
-enum Fill {
+enum Fill: UInt32 {
     case open
     case lined
     case solid
+    
+    static func random() -> Fill {
+        return Fill(rawValue: arc4random_uniform(solid.rawValue+1))!
+    }
 }

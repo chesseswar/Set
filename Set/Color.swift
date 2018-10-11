@@ -8,8 +8,12 @@
 
 import Foundation
 
-enum Color {
+enum Color: UInt32 {
     case blue
     case red
     case green
+    
+    static func random() -> Color {
+        return Color(rawValue: arc4random_uniform(green.rawValue+1))!
+    }
 }

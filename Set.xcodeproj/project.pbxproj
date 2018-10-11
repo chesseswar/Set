@@ -22,6 +22,7 @@
 		F9B604BB216CEF2A00995CCB /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B604BA216CEF2A00995CCB /* Board.swift */; };
 		F9B604BD216CF4AE00995CCB /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B604BC216CF4AE00995CCB /* Row.swift */; };
 		F9B604BF216CF4D000995CCB /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B604BE216CF4D000995CCB /* Column.swift */; };
+		F9D25FF6216CFC4A007B8110 /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D25FF5216CFC4A007B8110 /* CardGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F9B604BA216CEF2A00995CCB /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		F9B604BC216CF4AE00995CCB /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		F9B604BE216CF4D000995CCB /* Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
+		F9D25FF5216CFC4A007B8110 /* CardGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				F9B604BC216CF4AE00995CCB /* Row.swift */,
 				F9B604BE216CF4D000995CCB /* Column.swift */,
 				F9B604BA216CEF2A00995CCB /* Board.swift */,
+				F9D25FF5216CFC4A007B8110 /* CardGenerator.swift */,
 			);
 			name = Board;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				F9B604BD216CF4AE00995CCB /* Row.swift in Sources */,
 				F974C1402165103900C216E4 /* Shape.swift in Sources */,
 				F9B604B9216CEE5700995CCB /* Game.swift in Sources */,
+				F9D25FF6216CFC4A007B8110 /* CardGenerator.swift in Sources */,
 				F974C13C21650FA800C216E4 /* Card.swift in Sources */,
 				F974C142216510D000C216E4 /* Color.swift in Sources */,
 				F974C144216510E200C216E4 /* Fill.swift in Sources */,

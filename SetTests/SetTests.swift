@@ -29,12 +29,28 @@ class SetTests: XCTestCase {
     
     func testExampleGame() {
         let game = Game()
-        game.setUp()
+        //game.setUp()
         game.board.select(Row.top, Column.col_1)
-            .select(Row.middle, Column.col_4)
-            .select(Row.bottom, Column.col_3)
+        game.board.select(Row.middle, Column.col_4)
+        game.board.select(Row.bottom, Column.col_3)
             // if one selects more than 3 cards, throw exception
         game.validateSet()
+    }
+    
+    func testRandomCard() {
+        let gen = CardGenerator()
+        let card = gen.randomCard
+        XCTAssert(card.num >= 1 && card.num <= 3)
+    }
+    
+    func testRandomBoard() {
+        let board = Board()
+        XCTAssertEqual(board.cardsOnBoard.count, 3)
+        XCTAssertEqual(board.cardsOnBoard[0].count, 4)
+    }
+    
+    func testGameSetUp() {
+        
     }
     
     func testPerformanceExample() {

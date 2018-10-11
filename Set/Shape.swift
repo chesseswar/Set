@@ -8,8 +8,12 @@
 
 import Foundation
 
-enum Shape {
+enum Shape: UInt32 {
     case oval
     case squiggle
     case diamond
+    
+    static func random() -> Shape {
+        return Shape(rawValue: arc4random_uniform(diamond.rawValue+1))!
+    }
 }
