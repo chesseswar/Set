@@ -9,22 +9,19 @@
 import Foundation
 
 struct Board {
-    var cardsOnBoard: [[Card]] {
-        var rows: [[Card]] = []
-        let generator = CardGenerator()
-        for row in 0...2 {
-            rows.append([])
-            for _ in 1...4 {
-                rows[row].append(generator.randomCard)
-            }
-        }
-        return rows
-    }
-    
+    var cardsOnBoard: [[Card]]
     var discardedCards: [Card] = []
     var selectedCards: [Card] = []
     
-    func select(_ row: Row, _ col: Column) {
+    init() {
+        let generator = CardGenerator()
+        cardsOnBoard = generator.get2DArrayOfRandomCards()
+    }
+    
+    mutating func select(_ row: Row, _ col: Column) {
+        let rowIndex = Int(row.rawValue)
+        let colIndex = Int(col.rawValue)
         
+        selectedCards.append(cardsOnBoard[rowIndex][colIndex])
     }
 }

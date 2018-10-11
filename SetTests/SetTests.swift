@@ -12,9 +12,10 @@ import XCTest
 
 class SetTests: XCTestCase {
     
+    var game: Game = Game()
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
@@ -28,7 +29,6 @@ class SetTests: XCTestCase {
     }
     
     func testExampleGame() {
-        let game = Game()
         //game.setUp()
         game.board.select(Row.top, Column.col_1)
         game.board.select(Row.middle, Column.col_4)
@@ -44,13 +44,21 @@ class SetTests: XCTestCase {
     }
     
     func testRandomBoard() {
-        let board = Board()
-        XCTAssertEqual(board.cardsOnBoard.count, 3)
-        XCTAssertEqual(board.cardsOnBoard[0].count, 4)
+        XCTAssertEqual(game.board.cardsOnBoard.count, 3)
+        XCTAssertEqual(game.board.cardsOnBoard[0].count, 4)
     }
     
-    func testGameSetUp() {
-        
+    func testFunctionalityOfCardsOnBoard() {
+        let cards1 = game.board.cardsOnBoard
+        let cards2 = game.board.cardsOnBoard
+        XCTAssertEqual(cards1[0][0], cards2[0][0])
+    }
+    
+    func testCardSelection() {
+        let presumedSelection = game.board.cardsOnBoard[Int(Row.top.rawValue)][Int(Column.col_1.rawValue)]
+        game.board.select(Row.top, Column.col_1)
+        let selection = game.board.selectedCards[0]
+        XCTAssertEqual(presumedSelection, selection)
     }
     
     func testPerformanceExample() {

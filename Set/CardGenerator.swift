@@ -16,4 +16,16 @@ struct CardGenerator {
             return card
         }
     }
+    
+    func get2DArrayOfRandomCards() -> [[Card]] {
+        var rows: [[Card]] = []
+        let generator = CardGenerator()
+        for row in 0...2 {
+            rows.append([])
+            for _ in 1...4 {
+                rows[row].append(generator.randomCard)
+            }
+        }
+        return rows
+    }
 }
