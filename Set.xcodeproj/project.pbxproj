@@ -14,6 +14,8 @@
 		AFC93A84216267230085FB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC93A82216267230085FB40 /* LaunchScreen.storyboard */; };
 		AFC93A8F216267230085FB40 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC93A8E216267230085FB40 /* SetTests.swift */; };
 		AFC93A9A216267230085FB40 /* SetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC93A99216267230085FB40 /* SetUITests.swift */; };
+		AFEEE28C2174D9CD00797B20 /* SetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEE28B2174D9CD00797B20 /* SetError.swift */; };
+		AFEEE28E2174E17C00797B20 /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEE28D2174E17C00797B20 /* CardValidator.swift */; };
 		F974C13C21650FA800C216E4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C13B21650FA800C216E4 /* Card.swift */; };
 		F974C1402165103900C216E4 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C13F2165103900C216E4 /* Shape.swift */; };
 		F974C142216510D000C216E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C141216510D000C216E4 /* Color.swift */; };
@@ -56,6 +58,8 @@
 		AFC93A95216267230085FB40 /* SetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC93A99216267230085FB40 /* SetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUITests.swift; sourceTree = "<group>"; };
 		AFC93A9B216267230085FB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFEEE28B2174D9CD00797B20 /* SetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetError.swift; sourceTree = "<group>"; };
+		AFEEE28D2174E17C00797B20 /* CardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
 		F974C13B21650FA800C216E4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F974C13F2165103900C216E4 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		F974C141216510D000C216E4 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				AFC93A82216267230085FB40 /* LaunchScreen.storyboard */,
 				AFC93A85216267230085FB40 /* Info.plist */,
 				F9B604B8216CEE5700995CCB /* Game.swift */,
+				AFEEE28B2174D9CD00797B20 /* SetError.swift */,
+				AFEEE28D2174E17C00797B20 /* CardValidator.swift */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -310,10 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEEE28E2174E17C00797B20 /* CardValidator.swift in Sources */,
 				AFC93A7C216267230085FB40 /* ViewController.swift in Sources */,
 				F9B604BF216CF4D000995CCB /* Column.swift in Sources */,
 				F9B604BD216CF4AE00995CCB /* Row.swift in Sources */,
 				F974C1402165103900C216E4 /* Shape.swift in Sources */,
+				AFEEE28C2174D9CD00797B20 /* SetError.swift in Sources */,
 				F9B604B9216CEE5700995CCB /* Game.swift in Sources */,
 				F9D25FF6216CFC4A007B8110 /* CardGenerator.swift in Sources */,
 				F974C13C21650FA800C216E4 /* Card.swift in Sources */,

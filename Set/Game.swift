@@ -10,13 +10,10 @@ import Foundation
 
 struct Game {
     var board: Board
+    let cardValidator: CardValidator
     
     init() {
         board = Board()
-        
-    }
-    
-    func validateSet() {
-        
+        cardValidator = CardValidator(board: board)
     }
 }

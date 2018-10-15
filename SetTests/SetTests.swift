@@ -87,6 +87,46 @@ class SetTests: XCTestCase {
         XCTAssertThrowsError(game.board.tapCard(Row.bottom, Column.col_1))
     }
     
+    func testValidSets() {
+        game.board.tapCard(Row.top, Column.col_3)
+        game.board.tapCard(Row.middle, Column.col_4)
+        game.board.tapCard(Row.bottom, Column.col_3)
+        XCTAssertTrue(game.cardValidator.isValidSet())
+        
+        game.board.resetSelections()
+        game.board.tapCard(Row.middle, Column.col_2)
+        game.board.tapCard(Row.bottom, Column.col_1)
+        game.board.tapCard(Row.bottom, Column.col_4)
+        XCTAssertTrue(game.cardValidator.isValidSet())
+        
+        game.board.resetSelections()
+        game.board.tapCard(Row.middle, Column.col_1)
+        game.board.tapCard(Row.middle, Column.col_2)
+        game.board.tapCard(Row.middle, Column.col_4)
+        XCTAssertTrue(game.cardValidator.isValidSet())
+        
+        game.board.resetSelections()
+        game.board.tapCard(Row.top, Column.col_1)
+        game.board.tapCard(Row.top, Column.col_3)
+        game.board.tapCard(Row.bottom, Column.col_3)
+        XCTAssertTrue(game.cardValidator.isValidSet())
+        
+        game.board.resetSelections()
+        game.board.tapCard(Row.top, Column.col_1)
+        game.board.tapCard(Row.bottom, Column.col_2)
+        game.board.tapCard(Row.middle, Column.col_1)
+        XCTAssertTrue(game.cardValidator.isValidSet())
+    }
+    
+    func testInvalidSet() {
+        game.board.tapCard(Row.bottom, Column.col_2)
+        game.board.tapCard(Row.top, Column.col_3)
+        game.board.tapCard(Row.middle, Column.col_4)
+        XCTAssertFalse(game.cardValidator.isValidSet())
+    }
+    
+    
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
