@@ -22,24 +22,40 @@ struct Board {
         return cardsOnBoard[Int(row.rawValue)][Int(col.rawValue)]
     }
     
+    mutating func resetSelections() {
+        selectedCards = []
+    }
+    
     mutating func tapCard(_ row: Row, _ col: Column) {
         let cardOnBoard = getCard(row, col)
         if selectedCards.contains(cardOnBoard) {
             deselect(row, col)
         } else {
-            select(row, col)
+            do {
+                try select(row, col)
+            } catch SetError.invalidSelection {
+                print("Invalid selection exception occured.")
+            } catch {
+                print("Anonymous exception occured")
+            }
         }
     }
     
     private mutating func deselect(_ row: Row, _ col: Column) {
         let card = getCard(row, col)
-        
         selectedCards.remove(at: selectedCards.index(of: card)!)
     }
     
-    private mutating func select(_ row: Row, _ col: Column) {
-        let card = getCard(row, col)
+    private mutating func select(_ row: Row, _ col: Column) throws {
+        guard canSelect() else {
+            throw SetError.invalidSelection
+        }
         
+        let card = getCard(row, col)
         selectedCards.append(card)
+    }
+    
+    private func canSelect() -> Bool {
+        return selectedCards.count < 3
     }
 }
