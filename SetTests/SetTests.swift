@@ -30,9 +30,9 @@ class SetTests: XCTestCase {
     
     func testExampleGame() {
         //game.setUp()
-        game.board.select(Row.top, Column.col_1)
-        game.board.select(Row.middle, Column.col_4)
-        game.board.select(Row.bottom, Column.col_3)
+        game.board.tapCard(Row.top, Column.col_1)
+        game.board.tapCard(Row.middle, Column.col_4)
+        game.board.tapCard(Row.bottom, Column.col_3)
             // if one selects more than 3 cards, throw exception
         game.validateSet()
     }
@@ -56,9 +56,15 @@ class SetTests: XCTestCase {
     
     func testCardSelection() {
         let presumedSelection = game.board.cardsOnBoard[Int(Row.top.rawValue)][Int(Column.col_1.rawValue)]
-        game.board.select(Row.top, Column.col_1)
+        game.board.tapCard(Row.top, Column.col_1)
         let selection = game.board.selectedCards[0]
         XCTAssertEqual(presumedSelection, selection)
+    }
+    
+    func testSelectingSameCard() {
+        game.board.tapCard(Row.top, Column.col_1)
+        game.board.tapCard(Row.top, Column.col_1)
+        XCTAssertEqual(game.board.selectedCards.count, 0)
     }
     
     func testPerformanceExample() {

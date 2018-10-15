@@ -18,10 +18,28 @@ struct Board {
         cardsOnBoard = generator.get2DArrayOfRandomCards()
     }
     
-    mutating func select(_ row: Row, _ col: Column) {
-        let rowIndex = Int(row.rawValue)
-        let colIndex = Int(col.rawValue)
+    private func getCard(_ row: Row, _ col: Column) -> Card {
+        return cardsOnBoard[Int(row.rawValue)][Int(col.rawValue)]
+    }
+    
+    mutating func tapCard(_ row: Row, _ col: Column) {
+        let cardOnBoard = getCard(row, col)
+        if selectedCards.contains(cardOnBoard) {
+            deselect(row, col)
+        } else {
+            select(row, col)
+        }
+    }
+    
+    private mutating func deselect(_ row: Row, _ col: Column) {
+        let card = getCard(row, col)
         
-        selectedCards.append(cardsOnBoard[rowIndex][colIndex])
+        selectedCards.remove(at: selectedCards.index(of: card)!)
+    }
+    
+    private mutating func select(_ row: Row, _ col: Column) {
+        let card = getCard(row, col)
+        
+        selectedCards.append(card)
     }
 }

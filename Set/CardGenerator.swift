@@ -12,7 +12,6 @@ struct CardGenerator {
     var randomCard: Card {
         get {
             let card = Card(num: Int(arc4random_uniform(3) + 1), shape: Shape.random(), color: Color.random(), fill: Fill.random())
-            
             return card
         }
     }
