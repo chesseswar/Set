@@ -80,6 +80,13 @@ class SetTests: XCTestCase {
         XCTAssertEqual(game.board.selectedCards.count, 0)
     }
     
+    func testSelectingMoreThanThreeCards() {
+        game.board.tapCard(Row.top, Column.col_1)
+        game.board.tapCard(Row.middle, Column.col_2)
+        game.board.tapCard(Row.bottom, Column.col_3)
+        XCTAssertThrowsError(game.board.tapCard(Row.bottom, Column.col_1))
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
