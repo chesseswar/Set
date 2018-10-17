@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Fill: UInt32 {
+enum Fill: UInt32, Attribute {
     case open
     case lined
     case solid

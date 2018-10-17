@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Board {
+class Board {
     var cardsOnBoard: [[Card]]
     var discardedCards: [Card] = []
     var selectedCards: [Card] = []
@@ -22,11 +22,11 @@ struct Board {
         return cardsOnBoard[Int(row.rawValue)][Int(col.rawValue)]
     }
     
-    mutating func resetSelections() {
+    func resetSelections() {
         selectedCards = []
     }
     
-    mutating func tapCard(_ row: Row, _ col: Column) {
+    func tapCard(_ row: Row, _ col: Column) {
         let cardOnBoard = getCard(row, col)
         if selectedCards.contains(cardOnBoard) {
             deselect(row, col)
@@ -41,12 +41,12 @@ struct Board {
         }
     }
     
-    private mutating func deselect(_ row: Row, _ col: Column) {
+    private func deselect(_ row: Row, _ col: Column) {
         let card = getCard(row, col)
         selectedCards.remove(at: selectedCards.index(of: card)!)
     }
     
-    private mutating func select(_ row: Row, _ col: Column) throws {
+    private func select(_ row: Row, _ col: Column) throws {
         guard canSelect() else {
             throw SetError.invalidSelection
         }

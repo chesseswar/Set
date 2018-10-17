@@ -9,7 +9,7 @@
 import Foundation
 
 struct Card: Equatable {
-    let num: Int
+    let num: Num
     let shape: Shape
     let color: Color
     let fill: Fill

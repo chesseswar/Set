@@ -16,6 +16,8 @@
 		AFC93A9A216267230085FB40 /* SetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC93A99216267230085FB40 /* SetUITests.swift */; };
 		AFEEE28C2174D9CD00797B20 /* SetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEE28B2174D9CD00797B20 /* SetError.swift */; };
 		AFEEE28E2174E17C00797B20 /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEE28D2174E17C00797B20 /* CardValidator.swift */; };
+		F9474E8D21777B6400E26A23 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9474E8C21777B6400E26A23 /* Attribute.swift */; };
+		F9474E8F21777BD800E26A23 /* Num.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9474E8E21777BD800E26A23 /* Num.swift */; };
 		F974C13C21650FA800C216E4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C13B21650FA800C216E4 /* Card.swift */; };
 		F974C1402165103900C216E4 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C13F2165103900C216E4 /* Shape.swift */; };
 		F974C142216510D000C216E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974C141216510D000C216E4 /* Color.swift */; };
@@ -60,6 +62,8 @@
 		AFC93A9B216267230085FB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFEEE28B2174D9CD00797B20 /* SetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetError.swift; sourceTree = "<group>"; };
 		AFEEE28D2174E17C00797B20 /* CardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
+		F9474E8C21777B6400E26A23 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		F9474E8E21777BD800E26A23 /* Num.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Num.swift; sourceTree = "<group>"; };
 		F974C13B21650FA800C216E4 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F974C13F2165103900C216E4 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		F974C141216510D000C216E4 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				F974C13F2165103900C216E4 /* Shape.swift */,
 				F974C141216510D000C216E4 /* Color.swift */,
 				F974C143216510E200C216E4 /* Fill.swift */,
+				F9474E8C21777B6400E26A23 /* Attribute.swift */,
+				F9474E8E21777BD800E26A23 /* Num.swift */,
 			);
 			name = Attributes;
 			sourceTree = "<group>";
@@ -317,9 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFEEE28E2174E17C00797B20 /* CardValidator.swift in Sources */,
+				F9474E8F21777BD800E26A23 /* Num.swift in Sources */,
 				AFC93A7C216267230085FB40 /* ViewController.swift in Sources */,
 				F9B604BF216CF4D000995CCB /* Column.swift in Sources */,
 				F9B604BD216CF4AE00995CCB /* Row.swift in Sources */,
+				F9474E8D21777B6400E26A23 /* Attribute.swift in Sources */,
 				F974C1402165103900C216E4 /* Shape.swift in Sources */,
 				AFEEE28C2174D9CD00797B20 /* SetError.swift in Sources */,
 				F9B604B9216CEE5700995CCB /* Game.swift in Sources */,

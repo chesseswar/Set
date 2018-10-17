@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Color: UInt32 {
+enum Color: UInt32, Attribute {
     case blue
     case red
     case green

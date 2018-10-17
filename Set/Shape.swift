@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Shape: UInt32 {
+enum Shape: UInt32, Attribute {
     case oval
     case squiggle
     case diamond
