@@ -180,10 +180,10 @@
 		F9B604C0216CF50800995CCB /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				F9D25FF5216CFC4A007B8110 /* CardGenerator.swift */,
 				F9B604BC216CF4AE00995CCB /* Row.swift */,
 				F9B604BE216CF4D000995CCB /* Column.swift */,
 				F9B604BA216CEF2A00995CCB /* Board.swift */,
-				F9D25FF5216CFC4A007B8110 /* CardGenerator.swift */,
 			);
 			name = Board;
 			sourceTree = "<group>";

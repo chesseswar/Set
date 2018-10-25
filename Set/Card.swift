@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Card: Equatable {
     let num: Num
@@ -14,11 +15,14 @@ struct Card: Equatable {
     let color: Color
     let fill: Fill
     
+    
     static func == (card1: Card, card2: Card) -> Bool {
         return card1.num == card2.num
             && card1.shape == card2.shape
             && card1.color == card2.color
             && card1.fill == card2.fill
     }
+    
+    
 }
 
