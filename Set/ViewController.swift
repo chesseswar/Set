@@ -9,36 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let card = Card(num: Num.one, shape: Shape.squiggle, color: Color.blue, fill: Fill.lined)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testImage.image = image
+        let generator = CardGenerator()
+        let attributeImage = findCardImage(card: generator.randomCard)
+        for image in attributeImages {
+            image.image = attributeImage
+        }
+        
+        let img = UIImage(named: "blank_card")
+        for view in viewImages {
+            view.layer.contents = img?.cgImage
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBOutlet weak var testImage: UIImageView!
+    
+    @IBOutlet var viewImages: [UIView]!
+    @IBOutlet var attributeImages: [UIImageView]!
+    
+   // @IBOutlet var cardImages: [UIImageView]! = []
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    var image: UIImage {
-        let bottomImage = UIImage(named: "blank_card")
-        let topImage = findCardImage(card: card)
-        
-        let size = CGSize(width: 300, height: 300)
-        UIGraphicsBeginImageContext(size)
-        
-        let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        
-        bottomImage!.draw(in: areaSize)
-        topImage.draw(in: areaSize, blendMode: .normal, alpha: 0.8)
-        
-        return UIGraphicsGetImageFromCurrentImageContext()!
-    }
+    /*func putImageOnStack(imageView: UIImageView) {
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        shapeStack!.addSubview(imageView)
+        shapeStack!.insertArrangedSubview(imageView, at: 0)
+    }*/
     
     func findCardImage(card: Card) -> UIImage {
         let shape = card.shape
@@ -68,6 +70,19 @@ class ViewController: UIViewController {
         }
         
         return UIImage(named: "\(shapeString)_\(fillString)_\(colorString)")!
+        /*
+        let bottomImage = UIImage(named: "blank_card")
+        
+        let size = CGSize(width: 10000, height: 10000)
+        UIGraphicsBeginImageContext(size)
+        
+        let areaSize = CGRect(x: 0, y: 100, width: size.width, height: size.height+100)
+        let topAreaSize = CGRect(x: 100, y: 100, width: size.width, height: size.height)
+        
+        bottomImage!.draw(in: areaSize)
+        topImage.draw(in: topAreaSize, blendMode: .normal, alpha: 1.0)
+        
+        return UIGraphicsGetImageFromCurrentImageContext()!*/
     }
 
 }
