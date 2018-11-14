@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshScreen(UITapGestureRecognizer())
+        refreshScreen()
+        
     }
     
     
@@ -26,19 +27,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func refreshScreen(_ sender: UITapGestureRecognizer) {
+    func refreshScreen() {
         
         let generator = CardGenerator()
         var attributeImage = findCardImage(card: generator.randomCard)
+        /*
         for image in attributeImages {
             image.image = attributeImage
             attributeImage = findCardImage(card: generator.randomCard)
-        }
+        }*/
         
         let img = UIImage(named: "blank_card")
         for view in viewImages {
+            
             view.layer.contents = img?.cgImage
         }
+        
+        attributeImages[10].removeFromSuperview()
+        attributeImages[11].removeFromSuperview()
     }
     /*func putImageOnStack(imageView: UIImageView) {
         imageView.contentMode = UIViewContentMode.scaleAspectFit
