@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         refreshScreen(UITapGestureRecognizer())
     }
     
+    @IBOutlet weak var rowStackView: UIStackView!
     
     @IBOutlet var viewImages: [UIView]!
     @IBOutlet var attributeImages: [UIImageView]!
@@ -27,17 +28,52 @@ class ViewController: UIViewController {
     }
     
     @IBAction func refreshScreen(_ sender: UITapGestureRecognizer) {
-        
         let generator = CardGenerator()
-        var attributeImage = findCardImage(card: generator.randomCard)
-        for image in attributeImages {
-            image.image = attributeImage
-            attributeImage = findCardImage(card: generator.randomCard)
-        }
-        
-        let img = UIImage(named: "blank_card")
-        for view in viewImages {
-            view.layer.contents = img?.cgImage
+        for _ in 1...4 {
+            let row = UIStackView()
+            rowStackView.addArrangedSubview(row)
+            row.axis = UILayoutConstraintAxis.horizontal
+            row.distribution = UIStackViewDistribution.fillEqually
+            row.spacing = 2
+            row.translatesAutoresizingMaskIntoConstraints = false
+            row.widthAnchor.constraint(equalTo: rowStackView.widthAnchor).isActive = true
+            row.trailingAnchor.constraint(equalTo: rowStackView.trailingAnchor).isActive = true
+            row.leadingAnchor.constraint(equalTo: rowStackView.leadingAnchor).isActive = true
+            for _ in 1...3 {
+                let view = UIView()
+                row.addArrangedSubview(view)
+                view.translatesAutoresizingMaskIntoConstraints = false
+                view.heightAnchor.constraint(equalTo: row.heightAnchor).isActive = true
+                
+                let cardStackView = UIStackView()
+                view.addSubview(cardStackView)
+                cardStackView.axis = UILayoutConstraintAxis.vertical
+                cardStackView.contentMode = UIViewContentMode.scaleAspectFit
+                cardStackView.distribution = UIStackViewDistribution.fillEqually
+                cardStackView.translatesAutoresizingMaskIntoConstraints = false
+                cardStackView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+                cardStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                cardStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                cardStackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+                cardStackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+                
+                let backgroundImage = UIImage(named: "blank_card")
+                view.layer.contents = backgroundImage?.cgImage
+                
+                let card = generator.randomCard
+                let attributeImage = findCardImage(card: card)
+                
+                for _ in 0...(card.num.rawValue) {
+                    let imageView = UIImageView()
+                    imageView.contentMode = UIViewContentMode.center
+                    imageView.translatesAutoresizingMaskIntoConstraints = false
+                    cardStackView.addArrangedSubview(imageView)
+                    imageView.image = attributeImage
+                    imageView.widthAnchor.constraint(equalTo: cardStackView.widthAnchor, constant: 0).isActive = true
+                }
+                
+                
+            }
         }
     }
     /*func putImageOnStack(imageView: UIImageView) {
