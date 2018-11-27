@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var viewImages: [UIView]!
-    @IBOutlet var attributeImages: [UIImageView]!
     
    // @IBOutlet var cardImages: [UIImageView]! = []
     
@@ -30,21 +29,32 @@ class ViewController: UIViewController {
     func refreshScreen() {
         
         let generator = CardGenerator()
-        var attributeImage = findCardImage(card: generator.randomCard)
+        //var attributeImage = findCardImage(card: generator.randomCard)
         /*
         for image in attributeImages {
             image.image = attributeImage
             attributeImage = findCardImage(card: generator.randomCard)
         }*/
         
+        
         let img = UIImage(named: "blank_card")
         for view in viewImages {
             
+            view.frame = CGRect(x: 0, y: 0, width: screenSize.width - 10, height: 10)
+            view.backgroundColor = UIColor(patternImage: img!)
+            /*	
+            let imageView = UIImageView()
+            imageView.image = findCardImage(card: generator.randomCard)
             view.layer.contents = img?.cgImage
+            view.addSubview(imageView)
+            imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            imageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        */
         }
         
-        attributeImages[10].removeFromSuperview()
-        attributeImages[11].removeFromSuperview()
     }
     /*func putImageOnStack(imageView: UIImageView) {
         imageView.contentMode = UIViewContentMode.scaleAspectFit
@@ -56,10 +66,12 @@ class ViewController: UIViewController {
         let shape = card.shape
         let fill = card.fill
         let color = card.color
+        let num = card.num
         
         let shapeString: String
         let fillString: String
         let colorString: String
+        let numString: String
         
         switch shape {
         case Shape.diamond: shapeString = "diamond"
@@ -79,7 +91,13 @@ class ViewController: UIViewController {
         case Color.green: colorString = "green"
         }
         
-        return UIImage(named: "\(shapeString)_\(fillString)_\(colorString)")!
+        switch num {
+        case Num.one: numString = ""
+        case Num.two: numString = "_2"
+        case Num.three: numString = "_3"
+        }
+        
+        return UIImage(named: "\(shapeString)_\(fillString)_\(colorString)")!//\(numString).png")!
         /*
         let bottomImage = UIImage(named: "blank_card")
         
