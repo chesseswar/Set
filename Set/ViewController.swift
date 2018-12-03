@@ -40,10 +40,13 @@ class ViewController: UIViewController {
             row.trailingAnchor.constraint(equalTo: rowStackView.trailingAnchor).isActive = true
             row.leadingAnchor.constraint(equalTo: rowStackView.leadingAnchor).isActive = true
             for _ in 1...3 {
-                let view = UIView()
+                let view = CardView()
                 row.addArrangedSubview(view)
                 view.translatesAutoresizingMaskIntoConstraints = false
                 view.heightAnchor.constraint(equalTo: row.heightAnchor).isActive = true
+                
+                let clickGesture = UITapGestureRecognizer(target: self, action:  #selector (self.selectCard(_:)))
+                view.addGestureRecognizer(clickGesture)
                 
                 let cardStackView = UIStackView()
                 view.addSubview(cardStackView)
@@ -57,8 +60,7 @@ class ViewController: UIViewController {
                 cardStackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
                 cardStackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
                 
-                let backgroundImage = UIImage(named: "blank_card")
-                view.layer.contents = backgroundImage?.cgImage
+                changeViewBackground(view, imageName: "blank_card")
                 
                 let card = generator.randomCard
                 let attributeImage = findCardImage(card: card)
@@ -76,6 +78,30 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @objc private func selectCard(_ sender: UITapGestureRecognizer) {
+        let view = sender.view! as! CardView
+        view.isSelected = !view.isSelected
+        if view.isSelected {
+            unhighlightCard(view)
+        } else {
+            highlightCard(view)
+        }
+    }
+    
+    private func highlightCard(_ view: UIView) {
+        changeViewBackground(view, imageName: "blank_card_selected")
+    }
+    
+    private func unhighlightCard(_ view: UIView) {
+        changeViewBackground(view, imageName: "blank_card")
+    }
+    
+    private func changeViewBackground(_ view: UIView, imageName: String) {
+        let backgroundImage = UIImage(named: imageName)
+        view.layer.contents = backgroundImage?.cgImage
+    }
+    
     /*func putImageOnStack(imageView: UIImageView) {
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         shapeStack!.addSubview(imageView)
